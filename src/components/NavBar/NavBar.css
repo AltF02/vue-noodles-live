@@ -9,8 +9,8 @@
 }
 
 body {
-    color: black;
-    background-color: white;
+    color: #bfc0c1;
+    background-color: #16161c;
     margin: 0;
     padding: 0;
 }
@@ -73,12 +73,13 @@ main {
     margin: 0 1.5rem;
 }
 
+
 .fa-primary {
-    color: #ff7eee;
+    color: #FFA500;
 }
 
 .fa-secondary {
-    color: #df49a6;
+    color: #fd6000;
 }
 
 .fa-primary,

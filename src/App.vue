@@ -12,32 +12,6 @@ export default {
   components: {
     Navbar
   },
-  data() {
-    return {
-      todos: [
-        {
-          id: 1,
-          title: "Todo One",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Todo Two",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "Todo Three",
-          completed: false
-        }
-      ]
-    }
-  },
-  methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id !== id);
-    }
-  }
 }
 </script>
 
@@ -66,6 +40,6 @@ export default {
   }
 
   body::-webkit-scrollbar-thumb {
-    background: #6649b8;
+    background: #fd6000;
   }
 </style>
