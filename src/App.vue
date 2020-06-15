@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
+    <navbar/>
   </div>
 </template>
 
 <script>
-import Todos from "./components/Todos";
+import Navbar from "./components/NavBar/NavBar"
 
 export default {
   name: 'App',
   components: {
-    Todos
+    Navbar
   },
   data() {
     return {
@@ -42,6 +42,10 @@ export default {
 </script>
 
 <style>
+  :root{
+    font-size: 16px;
+  }
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -51,5 +55,17 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #6649b8;
   }
 </style>
