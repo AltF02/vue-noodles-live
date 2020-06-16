@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <main>
-      <h1>This is about</h1>
+      <h1>This is commands</h1>
     </main>
   </div>
 </template>
