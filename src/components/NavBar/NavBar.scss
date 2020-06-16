@@ -1,4 +1,10 @@
-:root {
+$text-primary: #b6b6b6;
+$text-secondary: #ececec;
+$bg-primary: #23232e;
+$bg-secondary: #141418;
+$transition-speed: 600ms;
+
+:root{
   font-size: 16px;
   font-family: "Roboto Light", sans-serif;
 }
@@ -45,16 +51,16 @@ main {
   display: flex;
   align-items: center;
   height: 5rem;
-  color: #b6b6b6;
+  color: $text-primary;
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
-  transition: 600ms;
+  transition: $transition-speed;
 }
 
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
-  background: #141418;
-  color: #ececec;
+  background: $bg-secondary;
+  color: $text-secondary;
 }
 
 .link-text {
@@ -68,6 +74,7 @@ main {
   margin: 0 1.5rem;
 }
 
+
 .fa-primary {
   color: #FFA500;
 }
@@ -78,7 +85,7 @@ main {
 
 .fa-primary,
 .fa-secondary {
-  transition: 600ms;
+  transition: $transition-speed;
 }
 
 .logo {
@@ -86,14 +93,15 @@ main {
   text-transform: uppercase;
   margin-bottom: 1rem;
   text-align: center;
-  color: #ececec;
-  background: #141418;
+  color: $text-secondary;
+  background: $bg-secondary;
   letter-spacing: 0.3ch;
   width: 100%;
-}
-.logo svg {
-  transform: rotate(0deg);
-  transition: transform 600ms;
+  svg {
+
+    transform: rotate(0deg);
+    transition: transform $transition-speed;
+  }
 }
 
 .navbar:hover .logo svg {
@@ -116,7 +124,6 @@ main {
   .navbar-nav {
     flex-direction: row;
   }
-
   .nav-link {
     justify-content: center;
   }
@@ -125,6 +132,7 @@ main {
     margin: 0;
   }
 }
+
 /* Big screens */
 @media only screen and (min-width: 600px) {
   .navbar {
@@ -137,10 +145,8 @@ main {
     width: 16rem;
   }
 
-  .navbar:hover .link-text {
+  .navbar:hover .link-text{
     display: inline;
-    transition: opacity 600ms;
+    transition: opacity $transition-speed;
   }
 }
-
-/*# sourceMappingURL=NavBar.css.map */

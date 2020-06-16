@@ -2,7 +2,7 @@
   <div class="home">
     <main>
       <h1>Tech asjdh</h1>
-      <p>
+      <p class="text">
         Fortnite is an online video game developed by Epic Games and released in 2017. It is available in three distinct game mode versions that otherwise share the same general gameplay and game engine: Fortnite: Save the World, a cooperative shooter-survival game for up to four players to fight off zombie-like creatures and defend objects with fortifications they can build; Fortnite Battle Royale, a free-to-play battle royale game where up to 100 players fight to be the last person standing; and Fortnite Creative, where players are given complete freedom to create worlds and battle arenas. Save the World and Battle Royale were released in 2017 as early access titles, while Creative was released on December 6, 2018. Save the World is available only for Windows, macOS, PlayStation 4, and Xbox One, while Battle Royale and Creative released for all those platforms, and also for Nintendo Switch, iOS, and Android devices. The game is expected to also launch with the release of the next-generation PlayStation 5 and Xbox Series X consoles.
 
         While the Save the World and Creative versions have been successful for Epic Games, Fortnite Battle Royale in particular became a resounding success – drawing in more than 125 million players in less than a year, earning hundreds of millions of dollars per month, and becoming a cultural phenomenon.
@@ -43,7 +43,7 @@
         Main article: Fortnite Creative § Development
         A creative sandboxing mode launched on December 6, 2018, synchronized with the start of season 7 of Fortnite Battle Royale. Here, each player has access to a private, persistent island on which they construct buildings and add and manipulate objects as desired. Players are able to invite friends to this island, and participate in unofficial games such as race tracks or jumping courses.[17] Initially, only players who bought the Battle Pass could get their own private island, but players who didn't purchase it got access to this game mode for free on December 13.
       </p>
-      <p>
+      <p class="text">
         See also: Fortnite: Save the World § Reception, Fortnite Battle Royale § Reception, and Fortnite Creative § Reception
         The Save the World mode achieved over one million players by August 2017, just prior to the release of Battle Royale.[18]
 
@@ -66,3 +66,9 @@ export default {
   name: 'Home',
 }
 </script>
+
+<style scoped lang="scss">
+  .text {
+    font-family: Arial, sans-serif;
+  }
+</style>
