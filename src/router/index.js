@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Commands from '../views/Commands.vue'
-import NotFound from '../components/404.vue'
+import Home from '../views/Home/Home.vue'
+import Commands from '../views/Commands/Commands.vue'
+import NotFound from '../views/404/404.vue'
 
 Vue.use(VueRouter)
 
