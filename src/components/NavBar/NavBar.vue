@@ -169,6 +169,7 @@
                             </g>
                         </svg>
                         <span class="link-text">Invite</span>
+
                     </a>
                 </li>
             </ul>
