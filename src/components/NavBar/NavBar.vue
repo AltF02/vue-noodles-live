@@ -144,7 +144,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://discord.com/oauth2/authorize?client_id=675542011457044512&permissions=1611000896&scope=bot" target="_blank" class="nav-link">
+                    <a href="http://invite.noodles-bot.live/" target="_blank" class="nav-link">
                         <svg
                                 aria-hidden="true"
                                 focusable="false"
