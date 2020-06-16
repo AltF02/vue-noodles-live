@@ -29,6 +29,7 @@
         Een seizoen duurt ongeveer tien weken. Gedurende die tien weken kan een speler beloningen verkrijgen via de Battle Pass die elk seizoen vervangen wordt. Ieder seizoen wordt de map aangepast naar het thema van dat seizoen. Door middel van Battle Pass challenges kunnen er nieuwe tiers vrijgespeeld worden, waar weer nieuwe items bij zitten. Er zijn 100 tiers, en in seizoen 2 70. De Battle Pass kost 950 V-Bucks, en men kan ook de Battle Bundle kopen, deze kost 2800 V-Bucks en er zitten 25 extra tiers bij. In seizoen 7 kon er door middel van Overtime Challenges een gratis battle pass voor seizoen 8 verdient worden als er 13 van de 20 challenges voltooid werden.
 
         Hieronder de datum van start en einde van elk seizoen:</p>
+      <i class="fab fa-discord"></i>
     </main>
   </div>
 </template>
