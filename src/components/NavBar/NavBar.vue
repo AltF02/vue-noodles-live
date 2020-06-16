@@ -144,7 +144,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://invite.noodles-bot.live/" target="_blank" class="nav-link">
+                    <a href="http://invite.noodles-bot.live/" target="_blank" class="nav-link">
                         <svg
                                 aria-hidden="true"
                                 focusable="false"
