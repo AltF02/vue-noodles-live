@@ -7,6 +7,7 @@ class main {
     greet () {
         console.log(`Hello ${this.name}`)
     }
+
 }
 
 const main1 = new main("hey");
