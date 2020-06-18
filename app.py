@@ -33,7 +33,7 @@ def fetch():
 commands = fetch()
 
 
-def note_repr(key):
+def command_repr(key):
     return {
         'url': request.host_url.rstrip('/') + url_for('notes_detail', key=key),
         'text': commands[key]
@@ -51,10 +51,10 @@ def notes_list():
         commands[idx] = note
         cur.execute(f"INSERT INTO api.commands(id, command) VALUES ({idx}, '{note}')")
         conn.commit()
-        return note_repr(idx), status.HTTP_201_CREATED
+        return command_repr(idx), status.HTTP_201_CREATED
 
     # request.method == 'GET'
-    return [note_repr(idx) for idx in sorted(commands.keys())]
+    return [command_repr(idx) for idx in sorted(commands.keys())]
 
 
 @app.route("/<int:key>/", methods=['GET', 'PUT', 'DELETE'])
@@ -65,7 +65,7 @@ def notes_detail(key):
     if request.method == 'PUT':
         note = str(request.data.get('text', ''))
         commands[key] = note
-        return note_repr(key)
+        return command_repr(key)
 
     elif request.method == 'DELETE':
         commands.pop(key, None)
@@ -74,7 +74,7 @@ def notes_detail(key):
     # request.method == 'GET'
     if key not in commands:
         raise exceptions.NotFound()
-    return note_repr(key)
+    return command_repr(key)
 
 
 if __name__ == "__main__":
