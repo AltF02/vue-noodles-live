@@ -1,3 +1,82 @@
+:root {
+  --orange:#fd6000;
+  --nav-width:5em;
+  --font-body:"sofia-pro",sans-serif;
+  --font-size:20px;
+  --h-color:#fff;
+  --toc-shadow:rgba(0,0,0,0.7) 0px 10px 20px 0px;
+  --card-radius:0.25em;
+  transition: all 0.4s ease;
+}
 
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  margin-left: calc(var(--nav-width) + .5em);
+  padding: 1em;
+  flex: 1;
+  transition: margin 0.3s ease;
+}
+
+h1 {
+  color: white;
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+hr {
+  border: none;
+  border-bottom: 2px dashed #2a2e35;
+}
+
+.btn, .page-item {
+  background: var(--nav-bg);
+  margin: 0.25em 0.25em 0.25em 0;
+  color: var(--text-color);
+  font-size: 0.625em;
+  border: 2px solid transparent;
+  padding: 1em 2em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 3px;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+.btn:hover, .page-item:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.btn-orange-outline {
+  background: transparent;
+  color: orange;
+  border: 2px solid var(--orange);
+  transition: background 0.4s ease;
+}
+
+.btn-orange-outline:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.38);
+  background: var(--orange);
+  color: #fff;
+  transition: background 0.4s ease;
+}
+
+.text-lg {
+  font-size: 1.5em;
+}
 
 /*# sourceMappingURL=Home.css.map */
