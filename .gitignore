@@ -1,3 +1,2 @@
-/.idea
-test.py
-db.sqlite
+node_modules
+.idea
