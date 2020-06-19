@@ -1,11 +1,11 @@
 const Pool = require('pg').Pool
-const secret = require('secret/secret')
+
 const pool = new Pool({
-    user: secret.user,
-    host: secret.host,
-    database: secret.database,
-    password: secret.password,
-    port: secret.port
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
+    port: 5432
 })
 
 const getUsers = (request, response) => {
