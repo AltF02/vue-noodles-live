@@ -1,5 +1,5 @@
 const Pool = require('pg').Pool
-const secret = require('secret')
+const secret = require('secret/secret')
 const pool = new Pool({
     user: secret.user,
     host: secret.host,
