@@ -1,10 +1,11 @@
 const Pool = require('pg').Pool
+const secret = require('secret')
 const pool = new Pool({
-    user: 'noodles',
-    host: 'noodles-bot.cimffc8jntkt.us-east-1.rds.amazonaws.com',
-    database: 'api',
-    password: 'Jupiter22',
-    port: 5432
+    user: secret.user,
+    host: secret.host,
+    database: secret.database,
+    password: secret.password,
+    port: secret.port
 })
 
 const getUsers = (request, response) => {
