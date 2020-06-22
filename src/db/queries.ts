@@ -1,4 +1,10 @@
-const Pool = require('pg').Pool
+import { QueryResult, Pool } from "pg";
+import { Request, Response } from "express";
+
+type userQuery = {
+    resultId: number
+}
+
 
 const pool = new Pool({
     user: process.env.DB_USER,
@@ -8,8 +14,8 @@ const pool = new Pool({
     port: 5432
 })
 
-const getUsers = (request, response) => {
-    pool.query('SELECT * FROM users ORDER BY id ASC', (err, result) => {
+const getUsers = (request: Request, response: Response) => {
+    pool.query('SELECT * FROM users ORDER BY id ASC', (err: Error, result: QueryResult<any>) => {
         if (err) {
             response.status(500)
             throw err
@@ -19,10 +25,10 @@ const getUsers = (request, response) => {
 
 }
 
-const getUserById = (request, response) => {
+const getUserById = (request: Request, response: Response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('SELECT * FROM users WHERE id = $1', [id], (err, result) => {
+    pool.query('SELECT * FROM users WHERE id = $1', [id], (err: Error, result: QueryResult<any>) => {
         if (err) {
             response.status(500)
             throw err
@@ -31,19 +37,19 @@ const getUserById = (request, response) => {
     })
 }
 
-const createUser = (request, response) => {
+const createUser = (request: Request, response: Response) => {
     const { name, email } = request.body
 
-    pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (err, result) => {
+    pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (err: Error, result: QueryResult<userQuery>) => {
         if (err) {
             response.status(500)
             throw err
         }
-        response.status(201).send(`User added with ID: ${result.insertId}`)
+            response.status(201).send(`User added with ID: ${result.rows[0].resultId}`)
     })
 }
 
-const updateUser = (request, response) => {
+const updateUser = (request: Request, response: Response) => {
     const id = parseInt(request.params.id)
     const { name, email } = request.body
 
@@ -60,10 +66,10 @@ const updateUser = (request, response) => {
     )
 }
 
-const deleteUser = (request, response) => {
+const deleteUser = (request: Request, response: Response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('DELETE FROM users WHERE id = $1', [id], (error, result) => {
+    pool.query('DELETE FROM users WHERE id = $1', [id], (error: Error, result:QueryResult<any>) => {
         if (error) {
             throw error
         }
