@@ -2,10 +2,11 @@
   "name": "api-noodles-live",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "ts-src/app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node src/app.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,10 @@
   },
   "homepage": "https://github.com/DankDumpster/vue-noodles-live#readme",
   "dependencies": {
+    "@types/pg": "^7.14.3",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
     "express": "^4.17.1",
     "pg": "^8.2.1"
   },
@@ -28,6 +31,9 @@
     "node": "14.x"
   },
   "devDependencies": {
-    "@types/express": "^4.17.6"
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.13",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5"
   }
 }
