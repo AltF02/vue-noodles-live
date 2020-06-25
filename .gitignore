@@ -2,7 +2,7 @@ node_modules
 .idea
 secret
 start.sh
-### Node template
+src/test### Node template
 # Logs
 logs
 *.log

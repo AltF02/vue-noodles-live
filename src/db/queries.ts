@@ -15,7 +15,9 @@ const pool = new Pool({
 })
 
 const getUsers = (request: Request, response: Response) => {
-    pool.query('SELECT * FROM users ORDER BY id ASC', (err: Error, result: QueryResult<any>) => {
+    let limit = request.query.limit || 100;
+
+    pool.query(`SELECT * FROM users ORDER BY id ASC LIMIT ${limit}`, (err: Error, result: QueryResult<any>) => {
         if (err) {
             response.status(500)
             throw err
@@ -37,50 +39,7 @@ const getUserById = (request: Request, response: Response) => {
     })
 }
 
-const createUser = (request: Request, response: Response) => {
-    const { name, email } = request.body
-
-    pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (err: Error, result: QueryResult<userQuery>) => {
-        if (err) {
-            response.status(500)
-            throw err
-        }
-            response.status(201).send(`User added with ID: ${result.rows[0].resultId}`)
-    })
-}
-
-const updateUser = (request: Request, response: Response) => {
-    const id = parseInt(request.params.id)
-    const { name, email } = request.body
-
-    pool.query(
-        'UPDATE users SET name = $1, email = $2 WHERE id = $3',
-        [name, email, id],
-        (err, result) => {
-            if (err) {
-                response.status(500)
-                throw err
-            }
-            response.status(200).send(`User modified with ID: ${id}`)
-        }
-    )
-}
-
-const deleteUser = (request: Request, response: Response) => {
-    const id = parseInt(request.params.id)
-
-    pool.query('DELETE FROM users WHERE id = $1', [id], (error: Error, result:QueryResult<any>) => {
-        if (error) {
-            throw error
-        }
-        response.status(200).send(`User deleted with ID: ${id}`)
-    })
-}
-
 module.exports = {
     getUsers,
-    getUserById,
-    createUser,
-    updateUser,
-    deleteUser
+    getUserById
 }
