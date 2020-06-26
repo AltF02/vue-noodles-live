@@ -4,7 +4,8 @@
             <h2><a href="/auth">Log in</a></h2>
         </div>
         <div v-else>
-            <h2>{{ user.username }}</h2>
+            <h2>Bank: {{ user.economy.balance.bank }}</h2>
+            <h2>Pocket: {{ user.economy.balance.pocket }}</h2>
         </div>
     </main>
 </template>
