@@ -4,12 +4,12 @@
       <div style="justify-content: space-between; display: flex; flex-direction: column;">
         <h1>The fun Bot 🍜 that can do serious stuff</h1>
         <p class="text-lg">
-          Noodles is an do it all bot of that is for people who want
-          <strong class="text-contrast">a highly configurable toolset for mental support &amp; discord</strong>.
+          Noodles is an do it all bot of that is for people who want a
+          <strong class="text-contrast">highly configurable toolset for discord</strong>.
         </p>
 
         <p>
-          <a class="btn btn-orange-outline" href="/#/about">Explore</a>
+          <a class="btn btn-orange-outline" href="/#/about">Learn More</a>
         </p>
 
 
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 export default {
   name: 'Home',
 }
