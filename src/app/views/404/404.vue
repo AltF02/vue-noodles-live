@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <main>
-            <h1 class="code">404</h1>
+            <h1 class="message">404</h1>
             <h2 class="message">Page not found</h2>
         </main>
     </div>
@@ -15,10 +15,6 @@
 
 <style scoped>
     .message {
-        text-align: center;
-    }
-
-    .code {
         text-align: center;
     }
 </style>

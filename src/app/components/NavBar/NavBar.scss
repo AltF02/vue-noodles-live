@@ -105,6 +105,13 @@ main {
   }
 }
 
+.avatar {
+  border-radius: 50%;
+  size: auto;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
 /* Small screens */
 @media only screen and (max-width: 600px) {
   .navbar {

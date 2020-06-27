@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require('express-session');
-const passport = require('passport')
+const passport = require('passport');
 require('./strategies/discordStrategy');
 const db = require('./database/database');
 

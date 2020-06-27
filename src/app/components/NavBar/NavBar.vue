@@ -86,7 +86,6 @@
                         <span class="link-text">Commands</span>
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a href="https://discord.com/invite/TWjxyhC" target="_blank" class="nav-link">
                         <svg
@@ -127,6 +126,7 @@
                                 viewBox="0 0 576 512"
                                 class="svg-inline--fa fa-donate fa-w-18 fa-9x"
                         >
+
                             <g class="fa-group">
                                 <path
                                         fill="currentColor"
@@ -144,32 +144,40 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://invite.noodles-bot.live/" target="_blank" class="nav-link">
-                        <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fad"
-                                data-icon="space-shuttle"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 640 512"
-                                class="svg-inline--fa fa-space-shuttle fa-w-20 fa-5x"
-                        >
-                            <g class="fa-group">
-                                <path
-                                        fill="currentColor"
-                                        d="M400 320h32a16 16 0 0 1 16 16v128a48 48 0 0 1-48 48H48a48 48 0 0 1-48-48V112a48 48 0 0 1 48-48h160a16 16 0 0 1 16 16v32a16 16 0 0 1-16 16H64v320h320V336a16 16 0 0 1 16-16z"
-                                        class="fa-secondary"
-                                ></path>
-                                <path
-                                        fill="currentColor"
-                                        d="M484 224h-17.88a28 28 0 0 1-28-28v-.78L440 128 192.91 376.91A24 24 0 0 1 159 377l-.06-.06L135 353.09a24 24 0 0 1 0-33.94l.06-.06L384 72l-67.21 1.9A28 28 0 0 1 288 46.68V28a28 28 0 0 1 28-28h158.67A37.33 37.33 0 0 1 512 37.33V196a28 28 0 0 1-28 28z"
-                                        class="fa-primary"
-                                ></path>
-                            </g>
-                        </svg>
-                        <span class="link-text">Invite</span>
-                    </a>
+                    <div v-if="user === null">
+                        <a href="/auth" class="nav-link">
+                            <svg
+                                    aria-hidden="true"
+                                    focusable="false"
+                                    data-prefix="fad"
+                                    data-icon="sign-in"
+                                    role="img"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 576 512"
+                                    class="svg-inline--fa fa-sign-in fa-w-18 fa-9x"
+                            >
+                                <g class="fa-group">
+                                    <path fill="currentColor"
+                                          d="M512 160v192a96 96 0 0 1-96 96h-84a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h84a32 32 0 0 0 32-32V160a32 32 0 0 0-32-32h-84a12 12 0 0 1-12-12V76a12 12 0 0 1 12-12h84a96 96 0 0 1 96 96z"
+                                          class="fa-secondary">
+
+                                    </path>
+                                    <path fill="currentColor"
+                                          d="M215.6 295.9H24a23.94 23.94 0 0 1-24-24v-32a23.94 23.94 0 0 1 24-24h191.5l-77.6-71.1a23.84 23.84 0 0 1-.7-34.5l21.9-21.9a24.08 24.08 0 0 1 33.9-.1L344.9 239a24 24 0 0 1 0 34.1L193 423.7a24 24 0 0 1-33.9-.1l-21.9-21.9a24 24 0 0 1 .8-34.7z"
+                                          class="fa-primary">
+
+                                    </path>
+                                </g>
+                            </svg>
+                            <span class="link-text">Log In</span>
+                        </a>
+                    </div>
+                    <div v-else>
+                        <a href="/dashboard" class="nav-link">
+                            <img class="avatar" :src="user.avatar">
+                            <span class="link-text">{{ user.username }}</span>
+                        </a>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -177,8 +185,28 @@
 </template>
 
 <script>
+    import UserApi from '../../services/api/user'
+
     export default {
     name: "NavBar",
+        data() {
+            return {
+                loading: true,
+                user: null
+            }
+        },
+
+        created() {
+            UserApi.getUser()
+                .then(user => {
+                    this.user = user
+                })
+                .catch(
+                    err => console.log(err))
+                .finally(() => {
+                    this.loading = false
+                })
+        }
     }
 </script>
 

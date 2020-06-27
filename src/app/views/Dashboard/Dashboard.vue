@@ -3,9 +3,11 @@
         <div v-if="user === null">
             <h2><a href="/auth">Log in</a></h2>
         </div>
-        <div v-else>
+        <div class="dashboard" v-else>
+            <h2>User Id: {{ user.user_id }}</h2>
             <h2>Bank: {{ user.economy.balance.bank }}</h2>
             <h2>Pocket: {{ user.economy.balance.pocket }}</h2>
+            <img :src="user.avatar" alt="user_avatar"/>
         </div>
     </main>
 </template>
@@ -38,5 +40,7 @@ export default {
 </script>
 
 <style scoped>
-
+    .dashboard img {
+        border-radius: 50%;
+    }
 </style>

@@ -4,7 +4,7 @@ function isAuthorized(req, res, next) {
     if (req.user) {
         next();
     } else {
-        res.redirect('/');
+        res.redirect('/auth');
     }
 }
 router.get('/yeet', isAuthorized, (req, res) => {
