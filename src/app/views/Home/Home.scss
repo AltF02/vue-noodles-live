@@ -19,8 +19,11 @@ body {
 }
 
 main {
+<<<<<<< Updated upstream
   padding: 1em;
   flex: 1;
+=======
+>>>>>>> Stashed changes
   transition: margin 0.3s ease;
 }
 
@@ -78,10 +81,24 @@ hr {
 .text-lg {
   font-size: 1.5em;
 }
+<<<<<<< Updated upstream
 
 
 @media only screen and (min-width: 600px) {
   main {
     margin-left: calc(var(--nav-width) + .5em);
+=======
+.title {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.about {
+  margin-top: 2rem;
+  height: 1200px;
+  a {
+    position: center;
+>>>>>>> Stashed changes
   }
 }
