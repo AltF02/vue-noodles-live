@@ -9,7 +9,7 @@
         </p>
 
         <p>
-          <a class="btn btn-orange-outline" href="/about">Learn More</a>
+          <a class="btn btn-orange-outline" href="#about-id" v-smooth-scroll>Learn More</a>
           <a class="btn btn-orange-outline" href="http://invite.noodles-bot.live/">Add to discord</a>
         </p>
         <hr>

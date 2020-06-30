@@ -2,6 +2,7 @@
 node_modules
 /dist
 src/server/build
+src/server-ts/build
 temp
 # local env files
 .env.local
@@ -9,6 +10,8 @@ temp
 .env
 *.css
 *.map
+src/server-ts/*.js
+src/server-ts/database/*.js
 # Log files
 npm-debug.log*
 yarn-debug.log*

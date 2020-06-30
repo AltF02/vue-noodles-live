@@ -1,11 +1,12 @@
-var main = /** @class */ (function () {
-    function main(name) {
+"use strict";
+class main {
+    constructor(name) {
         this.name = name;
     }
-    main.prototype.greet = function () {
-        console.log("Hello " + this.name);
-    };
-    return main;
-}());
-var main1 = new main("hey");
+    greet() {
+        console.log(`Hello ${this.name}`);
+    }
+}
+const main1 = new main("hey");
 main1.greet();
+//# sourceMappingURL=database.js.map

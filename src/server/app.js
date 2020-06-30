@@ -5,16 +5,14 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require('express-session');
 const passport = require('passport');
-require('./strategies/discordStrategy');
+require('./strategies/discordstrategy');
 const db = require('./database/database');
 
 db.then(() => console.log('Connected to mongodb')).catch(err => console.log(err))
 
 // Routes
 const authRoute = require('./routes/auth');
-const dashboardRoute = require('./routes/dashboard');
 const apiRoute = require('./routes/api')
-
 
 app.use(session({
     secret: uuid4(),
@@ -37,7 +35,6 @@ app.use('/', express.static(__dirname + '/build'));
 
 // Middleware Routes
 app.use('/auth', authRoute);
-app.use('/dashboard', dashboardRoute)
 app.use('/api', apiRoute)
 
 app.get('*', (req, res) => {
