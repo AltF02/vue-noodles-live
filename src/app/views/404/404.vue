@@ -14,7 +14,5 @@
 </script>
 
 <style scoped>
-    .message {
-        text-align: center;
-    }
+    @import "404.css";
 </style>

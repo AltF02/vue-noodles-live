@@ -21,16 +21,16 @@ passport.use(new DiscordStrategy({
         const user = await DiscordUser.findOne({ user_id: profile.id });
         if (user) {
             console.log("User exists.");
-            await DiscordUser.update({user_id: profile.id}, { $set: {avatar: 'https://cdn.discordapp.com/avatars/' + profile.id + '/' + profile.avatar}})
-            await DiscordUser.update({user_id: profile.id}, { $set: {username: profile.username}})
+            await DiscordUser.updateOne({user_id: profile.id}, { $set: {avatar: 'https://cdn.discordapp.com/avatars/' + profile.id + '/' + profile.avatar + '.png'}})
+            await DiscordUser.updateOne({user_id: profile.id}, { $set: {username: profile.username}})
             done(null, user)
         }
         else {
             console.log("User does not exist");
             const newUser = await DiscordUser.create({
                 user_id: profile.id,
-                avatar: 'https://cdn.discordapp.com/avatars/' + profile.id + '/' + profile.avatar,
-                username: profile.username
+                avatar: 'https://cdn.discordapp.com/avatars/' + profile.id + '/' + profile.avatar + '.png',
+                username: profile.username,
             });
             const saveUser = await newUser.save()
             done(null, saveUser)
