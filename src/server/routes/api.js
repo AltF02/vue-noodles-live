@@ -15,7 +15,7 @@ router.get('/test', (req, res) => {
     }));
 })
 
-router.get('/discord/getavatar/', (req, res) => {
+router.get('/user/avatar', (req, res) => {
     if (req.user) {
         res.send(JSON.stringify({
             url: req.user.avatar

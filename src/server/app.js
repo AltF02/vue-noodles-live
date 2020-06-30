@@ -1,4 +1,5 @@
 require('dotenv').config();
+const uuid4 = require('uuid4')
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,12 +17,13 @@ const apiRoute = require('./routes/api')
 
 
 app.use(session({
-    secret: 'some random secret',
+    secret: uuid4(),
     cookie: {
         maxAge: 60000 * 60 * 24
     },
     saveUninitialized: false,
-    name: 'discord.oath2'
+    name: 'discord.oath2',
+    resave: true,
 }))
 
 // Passport
